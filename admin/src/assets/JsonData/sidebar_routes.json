@@ -1,0 +1,32 @@
+[
+    {
+        "display_name": "Dashboard",
+        "route": "/",
+        "icon": "bx bx-dashboard"
+    },
+    {
+        "display_name": "Nhân Viên",
+        "route": "/customers",
+        "icon": "bx bx-id-card"
+    },
+    {
+        "display_name": "Sản Phẩm",
+        "route": "/products",
+        "icon": "bx bx-cube"
+    },
+    {
+        "display_name": "Nhập Sản Phẩm",
+        "route": "/productentry",
+        "icon": "bx bx-import"
+    },
+    {
+        "display_name": "Xuất Sản Phẩm",
+        "route": "/exprotorders",
+        "icon": "bx bx-export"
+    },
+    {
+        "display_name": "Kho Hàng",
+        "route": "/warehouse",
+        "icon": "bx bx-store"
+    }
+]

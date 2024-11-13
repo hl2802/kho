@@ -1,0 +1,290 @@
+.provider-page {
+    padding: 20px;
+    background-color: #f8f9fa;
+    max-width: 1000vh;
+    margin: 0 auto;
+}
+
+/* Header */
+h2 {
+    font-size: 20px;
+    color: #343a40;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Add Provider Button */
+.btn_add {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007dc3;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn_add:hover {
+    background-color: #005f9e;
+}
+
+/* Edit Form Styling */
+.edit-form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.edit-form input[type="text"],
+.edit-form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
+}
+
+.edit-form input[type="text"]:focus,
+.edit-form input[type="number"]:focus {
+    border-color: #007dc3;
+    outline: none;
+}
+
+.edit-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.edit-form button:first-child {
+    background-color: #28a745;
+    color: white;
+    margin-right: 10px;
+}
+
+.edit-form button:first-child:hover {
+    background-color: #218838;
+}
+
+.edit-form button:last-child {
+    background-color: #dc3545;
+    color: white;
+}
+
+.edit-form button:last-child:hover {
+    background-color: #c82333;
+}
+
+/* Provider Table Styling */
+.provider-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.provider-table th,
+.provider-table td {
+    padding: 12px 15px;
+    border: 1px solid #dee2e6;
+    text-align: center;
+}
+
+.provider-table th {
+    background-color: #007dc3;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.provider-table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.provider-table tbody tr:hover {
+    background-color: #349eff;
+}
+
+.btn_edit {
+    padding: 6px 12px;
+    background-color: #28a745;
+    color: white;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.btn_edit:hover {
+    background-color: #218838;
+}
+
+/* Modal Styles */
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: #333;
+    transition: color 0.2s;
+}
+
+.close:hover {
+    color: red;
+    font-size: 26px;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.modal-content button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.modal-content button:first-of-type {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.modal-content button:last-of-type {
+    background-color: #f44336;
+    color: white;
+}
+
+/* Search and filter section */
+.search-filter-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    padding: 10px;
+    width: 125vh;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.filter-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+.filter-button:hover {
+    background-color: #0056b3;
+}
+
+/* Fade in animation for modal */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+
+    .edit-form input[type="text"],
+    .edit-form input[type="number"] {
+        font-size: 14px;
+    }
+
+    .provider-table th,
+    .provider-table td {
+        padding: 10px;
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    .provider-table th,
+    .provider-table td {
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+    .provider-table th,
+    .provider-table td {
+        padding: 14px;
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .provider-table th,
+    .provider-table td {
+        padding: 16px;
+        font-size: 18px;
+    }
+}

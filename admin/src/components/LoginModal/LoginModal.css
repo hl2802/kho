@@ -1,0 +1,17 @@
+/* Thêm FontAwesome vào CSS bằng @import */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+
+.login-btn {
+    background: none;
+    box-shadow: none;
+    border: none;
+}
+
+.login-btn i {
+    font-size: 28px;
+    background: none;
+    mix-blend-mode: darken;
+    background: none;
+    box-shadow: none;
+}

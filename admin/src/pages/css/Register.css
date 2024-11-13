@@ -1,0 +1,154 @@
+.register-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+    text-align: left;
+    /* Đảm bảo không có text-align: center ảnh hưởng đến label */
+}
+
+.register-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    margin: 20px;
+}
+
+
+.register-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #343a40;
+}
+
+.register-form .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+    /* Đảm bảo căn trái cho các label */
+}
+
+.register-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #495057;
+    text-align: left;
+    /* Căn trái nội dung của label */
+}
+
+.register-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.register-form input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.register-form input::placeholder {
+    color: #6c757d;
+}
+
+.register-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #00bcd4;
+    /* Màu xanh nước (cyan) */
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.register-button:hover {
+    background-color: #008c9e;
+    /* Màu xanh nước tối hơn khi hover */
+}
+
+
+.register-footer {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.register-footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.register-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .register-container {
+        padding: 15px;
+    }
+
+    .register-title {
+        font-size: 22px;
+    }
+
+    .register-form label {
+        font-size: 13px;
+    }
+
+    .register-form input {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .register-button {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .register-container {
+        padding: 20px;
+    }
+
+    .register-title {
+        font-size: 24px;
+    }
+
+    .register-form label {
+        font-size: 14px;
+    }
+
+    .register-form input {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .register-button {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .register-container {
+        max-width: 450px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .register-container {
+        max-width: 500px;
+    }
+}

@@ -1,0 +1,101 @@
+.categories {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .categories h2 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .categories table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .categories th, .categories td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .categories th {
+    background-color: #f1f1f1;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .categories td {
+    color: #555;
+  }
+  
+  .categories td input[type="text"] {
+    width: 100%;
+    padding: 6px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .categories button {
+    padding: 6px 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
+  .categories button:hover {
+    opacity: 0.9;
+  }
+  
+  .categories button:focus {
+    outline: none;
+  }
+  
+  .categories button:first-of-type {
+    background-color: #007bff;
+  }
+  
+  .categories button:last-of-type {
+    background-color: #dc3545;
+  }
+  
+  .add-category {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .add-category input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+  
+  .add-category button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .add-category button:hover {
+    background-color: #218838;
+  }
+  

@@ -1,0 +1,348 @@
+.inventory-page {
+    padding: 20px;
+    background-color: #f8f9fa;
+
+
+    .search-filter-section {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 20px;
+
+        .search-input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            transition: border-color 0.3s ease;
+
+            &:focus {
+                border-color: #007dc3;
+                outline: none;
+            }
+        }
+
+        .filter-dropdown,
+        .filter-button {
+            padding: 10px;
+            border: 1px solid #007dc3;
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
+        }
+
+        .filter-dropdown {
+            background-color: #ffffff;
+            flex: 0 1 auto;
+            color: #495057;
+        }
+
+        .filter-button {
+            background-color: #007dc3;
+            color: #ffffff;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #005f9e;
+            }
+        }
+    }
+
+    /* Modal Styles */
+    .modal {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        /* Màu nền mờ */
+        z-index: 1000;
+    }
+
+    .modal-content {
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        width: 80%;
+        max-width: 600px;
+        position: relative;
+        /* Để vị trí của close button tương đối với modal */
+    }
+
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 30px;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        color: #000;
+    }
+
+    .close:hover {
+        color: red;
+        /* Chỉnh màu khi hover */
+        font-size: 32px;
+        /* Tăng kích thước nút khi hover */
+    }
+
+
+    .stats-overview {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 20px;
+        gap: 20px;
+
+        .stat-card {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            flex: 1;
+
+            .stat-icon {
+                font-size: 28px;
+                color: #007dc3;
+                margin-bottom: 8px;
+            }
+
+            .stat-title {
+                font-size: 16px;
+                color: #343a40;
+                margin-bottom: 5px;
+            }
+
+            .stat-value {
+                font-size: 18px;
+                font-weight: bold;
+                color: #f39c12;
+            }
+        }
+    }
+
+    .inventory-table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #ffffff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+        th,
+        td {
+            padding: 12px;
+            border: 1px solid #dee2e6;
+            text-align: center;
+        }
+
+        th {
+            background-color: #007dc3;
+            color: #ffffff;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        tr:hover {
+            background-color: #349eff;
+        }
+
+        .btn_edit,
+        .btn_delete,
+        .btn_cancel {
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 15px;
+            margin: 0 4px;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn_edit {
+            background-color: #28a745;
+            color: white;
+
+            &:hover {
+                background-color: #218838;
+            }
+        }
+
+        .btn_delete {
+            background-color: #dc3545;
+            color: white;
+
+            &:hover {
+                background-color: #c82333;
+            }
+        }
+
+        .btn_cancel {
+            background-color: #ffc107;
+            color: white;
+
+            &:hover {
+                background-color: #e0a800;
+            }
+        }
+    }
+
+    .edit-form {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+
+        h2 {
+            font-size: 18px;
+            color: #343a40;
+            margin-bottom: 15px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            transition: border-color 0.3s ease;
+
+            &:focus {
+                border-color: #007dc3;
+                outline: none;
+            }
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-right: 10px;
+            transition: background-color 0.3s ease;
+
+            &:first-child {
+                background-color: #28a745;
+                color: white;
+
+                &:hover {
+                    background-color: #218838;
+                }
+            }
+
+            &:last-child {
+                background-color: #dc3545;
+                color: white;
+
+                &:hover {
+                    background-color: #c82333;
+                }
+            }
+        }
+    }
+}
+
+/* Responsive Styles */
+
+@media (max-width: 768px) {
+    .search-filter-section {
+        flex-direction: column;
+        gap: 5px;
+
+        .search-input,
+        .filter-dropdown,
+        .filter-button {
+            width: 100%;
+        }
+    }
+
+    .stats-overview {
+        flex-direction: column;
+        gap: 10px;
+
+        .stat-card {
+            margin: 5px 0;
+            text-align: center;
+        }
+    }
+
+    .inventory-table {
+        font-size: 12px;
+
+        th,
+        td {
+            padding: 10px;
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .stats-overview {
+        gap: 10px;
+
+        .stat-card {
+            margin: 5px;
+        }
+    }
+
+    .inventory-table {
+        font-size: 14px;
+
+        th,
+        td {
+            padding: 12px;
+        }
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .stats-overview {
+        gap: 15px;
+
+        .stat-card {
+            margin: 0 10px;
+        }
+    }
+
+    .inventory-table {
+        font-size: 16px;
+
+        th,
+        td {
+            padding: 14px;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .stats-overview {
+        gap: 20px;
+
+        .stat-card {
+            margin: 0 10px;
+        }
+    }
+
+    .inventory-table {
+        font-size: 18px;
+
+        th,
+        td {
+            padding: 16px;
+        }
+    }
+}
