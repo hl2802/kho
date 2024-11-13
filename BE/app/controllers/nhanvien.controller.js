@@ -85,3 +85,36 @@ exports.signin = async (req, res) => {
     res.status(500).send({ message: "Có lỗi xảy ra trong quá trình đăng nhập." });
   }
 };
+
+// Hàm lấy danh sách nhân viên
+exports.getAllEmployees = async (req, res) => {
+  try {
+    // Lấy danh sách tất cả nhân viên từ cơ sở dữ liệu
+    const employees = await NhanVien.findAll({
+      attributes: ['ma_NV', 'ho_Ten', 'chuc_Vu', 'dia_Chi', 'so_Dien_Thoai'] // Chỉ lấy các trường cần thiết
+    });
+
+    // Kiểm tra nếu không có nhân viên nào trong cơ sở dữ liệu
+    if (employees.length === 0) {
+      return res.status(404).send({ message: "Không có nhân viên nào." });
+    }
+
+    // Chuyển đổi dữ liệu nhân viên thành dạng dễ đọc (nếu cần)
+    const employeeList = employees.map(employee => ({
+      ma_NV: employee.ma_NV,
+      ho_Ten: employee.ho_Ten,
+      chuc_Vu: employee.chuc_Vu,
+      dia_Chi: employee.dia_Chi,
+      so_Dien_Thoai: employee.so_Dien_Thoai
+    }));
+
+    // Trả về danh sách nhân viên dưới dạng JSON
+    res.status(200).send({
+      message: "Lấy danh sách nhân viên thành công.",
+      data: employeeList
+    });
+  } catch (error) {
+    console.error("Lỗi trong quá trình lấy danh sách nhân viên:", error);
+    res.status(500).send({ message: "Có lỗi xảy ra trong quá trình lấy danh sách nhân viên." });
+  }
+};
