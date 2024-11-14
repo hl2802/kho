@@ -42,7 +42,7 @@ const Login = () => {
         setIsLoading(true); // Bắt đầu loading khi gửi yêu cầu
         try {
             // Gửi yêu cầu đăng nhập đến API
-            const response = await axios.post('http://localhost:8000/nhanvien/signin', formData);
+            const response = await axios.post('http://localhost:8000/api/nhanvien/signin', formData);
 
             // Nếu đăng nhập thành công
             setNotification({ message: response.data.message, type: 'success' });

@@ -964,7 +964,7 @@
 				}
 			  },
 			  "url": {
-				"raw": "http://localhost:8000/nhanvien/signup",
+				"raw": "http://localhost:8000/api/nhanvien/signup",
 				"protocol": "http",
 				"host": [
 				  "localhost"
@@ -994,7 +994,7 @@
 				}
 			  },
 			  "url": {
-				"raw": "http://localhost:8000/nhanvien/signin",
+				"raw": "http://localhost:8000/api/nhanvien/signin",
 				"protocol": "http",
 				"host": [
 				  "localhost"

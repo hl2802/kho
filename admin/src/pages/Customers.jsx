@@ -34,7 +34,7 @@ const Customers = () => {
         // Hàm gọi API để lấy dữ liệu nhân viên
         const fetchCustomers = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/nhanvien/employees');
+                const response = await axios.get('http://localhost:8000/api/nhanvien/employees');
                 
                 // Kiểm tra nếu dữ liệu trả về hợp lệ
                 if (response.data && response.data.data && Array.isArray(response.data.data)) {

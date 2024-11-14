@@ -35,7 +35,7 @@ const Register = () => {
 
         try {
             // Gửi yêu cầu đăng ký đến API
-            const response = await axios.post('http://localhost:8000/nhanvien/signup', {
+            const response = await axios.post('http://localhost:8000/api/nhanvien/signup', {
                 ma_NV: register.ma_NV,
                 ho_Ten: register.ho_Ten,
                 chuc_Vu: register.chuc_Vu,
