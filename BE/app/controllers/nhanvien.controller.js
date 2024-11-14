@@ -10,13 +10,13 @@ exports.signup = async (req, res) => {
 
     // Kiểm tra dữ liệu đầu vào
     if (!ma_NV || !ho_Ten || !chuc_Vu || !dia_Chi || !so_Dien_Thoai || !mat_Khau) {
-      return res.status(400).send({ message: "Tất cả các trường đều cần thiết." });
+      return res.status(400).json({ message: "Tất cả các trường đều cần thiết." });
     }
 
     // Kiểm tra xem ma_NV đã tồn tại chưa
     const existingUser = await NhanVien.findOne({ where: { ma_NV } });
     if (existingUser) {
-      return res.status(400).send({ message: "Mã nhân viên đã được đăng ký." });
+      return res.status(400).json({ message: "Mã nhân viên đã được đăng ký." });
     }
 
     // Mã hóa mật khẩu
@@ -33,10 +33,10 @@ exports.signup = async (req, res) => {
     };
 
     const data = await NhanVien.create(newNhanVien);
-    res.status(201).send({ message: "Đăng ký thành công.", data });
+    return res.status(201).json({ message: "Đăng ký thành công.", data });
   } catch (error) {
-    console.error("Lỗi trong quá trình đăng ký:", error);
-    res.status(500).send({ message: "Có lỗi xảy ra trong quá trình đăng ký." });
+    console.error("Lỗi trong quá trình đăng ký:", error.message);
+    return res.status(500).json({ message: "Có lỗi xảy ra trong quá trình đăng ký." });
   }
 };
 
@@ -47,28 +47,28 @@ exports.signin = async (req, res) => {
 
     // Kiểm tra dữ liệu đầu vào
     if (!ma_NV || !mat_Khau) {
-      return res.status(400).send({ message: "Mã nhân viên và mật khẩu là bắt buộc." });
+      return res.status(400).json({ message: "Mã nhân viên và mật khẩu là bắt buộc." });
     }
 
     // Tìm nhân viên theo ma_NV
     const user = await NhanVien.findOne({ where: { ma_NV } });
     if (!user) {
-      return res.status(404).send({ message: "Nhân viên không tồn tại." });
+      return res.status(404).json({ message: "Nhân viên không tồn tại." });
     }
 
     // Kiểm tra mật khẩu
     const isMatch = await bcrypt.compare(mat_Khau, user.mat_Khau);
     if (!isMatch) {
-      return res.status(401).send({ message: "Mật khẩu không chính xác." });
+      return res.status(401).json({ message: "Mật khẩu không chính xác." });
     }
 
     // Tạo token
-    const token = jwt.sign({ id: user.ID }, "YOUR_SECRET_KEY", {
+    const token = jwt.sign({ id: user.ID }, process.env.JWT_SECRET || "YOUR_SECRET_KEY", {
       expiresIn: "1h" // Thời gian hết hạn token
     });
 
     // Trả về thông tin nhân viên và token
-    res.status(200).send({
+    return res.status(200).json({
       message: "Đăng nhập thành công.",
       token,
       user: {
@@ -81,8 +81,8 @@ exports.signin = async (req, res) => {
       }
     });
   } catch (error) {
-    console.error("Lỗi trong quá trình đăng nhập:", error);
-    res.status(500).send({ message: "Có lỗi xảy ra trong quá trình đăng nhập." });
+    console.error("Lỗi trong quá trình đăng nhập:", error.message);
+    return res.status(500).json({ message: "Có lỗi xảy ra trong quá trình đăng nhập." });
   }
 };
 
@@ -94,12 +94,10 @@ exports.getAllEmployees = async (req, res) => {
       attributes: ['ma_NV', 'ho_Ten', 'chuc_Vu', 'dia_Chi', 'so_Dien_Thoai'] // Chỉ lấy các trường cần thiết
     });
 
-    // Kiểm tra nếu không có nhân viên nào trong cơ sở dữ liệu
     if (employees.length === 0) {
-      return res.status(404).send({ message: "Không có nhân viên nào." });
+      return res.status(404).json({ message: "Không có nhân viên nào." });
     }
 
-    // Chuyển đổi dữ liệu nhân viên thành dạng dễ đọc (nếu cần)
     const employeeList = employees.map(employee => ({
       ma_NV: employee.ma_NV,
       ho_Ten: employee.ho_Ten,
@@ -108,13 +106,12 @@ exports.getAllEmployees = async (req, res) => {
       so_Dien_Thoai: employee.so_Dien_Thoai
     }));
 
-    // Trả về danh sách nhân viên dưới dạng JSON
-    res.status(200).send({
+    return res.status(200).json({
       message: "Lấy danh sách nhân viên thành công.",
       data: employeeList
     });
   } catch (error) {
-    console.error("Lỗi trong quá trình lấy danh sách nhân viên:", error);
-    res.status(500).send({ message: "Có lỗi xảy ra trong quá trình lấy danh sách nhân viên." });
+    console.error("Lỗi trong quá trình lấy danh sách nhân viên:", error.message);
+    return res.status(500).json({ message: "Có lỗi xảy ra trong quá trình lấy danh sách nhân viên." });
   }
 };
